@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/5b18ce7b86.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <title>main</title>
+</head>
+
+<body>
+    <div class="bar" style="padding-left:11px">
+        <a href="#">Feedback</a>
+        <a href=" # ">News</a>
+        <a href="# ">Contact</a>
+        <a href="# " class="active">Login</a>
+        <i class="fa-solid fa-bars fa-lg open-menu x" onclick="toggleMenu()"></i>
+
+    </div>
+    <div class="sidenav" id="subMenu">
+        <a href="#about ">Home</a>
+        <a href="#services ">Facilities</a>
+        <button class="dropdown-btn ">Sort By
+            <i class="fa fa-caret-down "></i>
+          </button>
+        <div class="dropdown-container ">
+            <a href="# ">PG</a>
+            <a href="# ">Hostels</a>
+            <a href="# ">Rooms</a>
+            <a href="# ">Flats</a>
+        </div>
+        <a href="#contact ">Contact Us</a>
+        <button class="dropdown-btn ">Address
+      <i class="fa fa-caret-down "></i>
+    </button>
+        <div class="dropdown-container">
+            <a href="# ">ADDR1</a>
+            <a href="# ">ADDR2</a>
+            <a href="# ">ADDR3</a>
+        </div>
+        <a href="#contact ">About Us</a>
+    </div>
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+        let submenu = document.getElementById("subMenu");
+
+        function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+
+</html>
